@@ -1,2 +1,4 @@
-source ./setup.sh $1
+#!/bin/bash
+
+source setup.sh $1
 make
