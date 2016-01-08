@@ -3,18 +3,20 @@
 # Tested on Linux 7.3 by A.Formica
 #
 
-OS=$1
+INPUT_OS=$1
 POSSOSVALUES=HP-UX,AIX,OSF1,SunOS,Solaris,LynxOS,Linux,Darwin
 
 echo $POSSOSVALUES
 
-echo $POSSOSVALUES | grep $OS > /dev/null
+echo $POSSOSVALUES | grep $INPUT_OS > /dev/null
 
 if [ $? != 0 ]; then
     echo "Unknown OS... setup failed"
     echo "Possible values are: $POSSOSVALUES"
     return 1
 fi
+
+export OS=$INPUT_OS
 
 if [ "${OS}" == "Solaris" ]; then
     path=(/usr/ccs/bin:$path)
