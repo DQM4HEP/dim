@@ -8,12 +8,12 @@ SHAREABLE=
 
 IDIR = ./dim
 
-EXTRALIBS = 
-FLAGS = 
+EXTRALIBS =
+FLAGS =
 
 CFLAGS = $(FLAGS) -g -I$(IDIR)
 EXCFLAGS = $(FLAGS) -g -I$(IDIR) 
-LIBFLAGS =
+LIBFLAGS = -lpthread
 X64 = no
 
 ifeq ($(BITS32),yes)
