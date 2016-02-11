@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source setup.sh $1
+
+if [[ $1 == "Darwin" ]];
+do
+	patch src/tcpip.c < dim4mac/tcpip.c.patch
+	patch makefile_common < dim4mac/makefile_common.patch
+	patch makefile_dim < dim4mac/makefile_dim.patch
+fi
