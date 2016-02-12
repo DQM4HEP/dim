@@ -4,6 +4,21 @@ bin_destination=$1
 lib_destination=$2
 includes_destination=$3
 
+if [ ! -d $bin_destination ]; then
+    mkdir -p $bin_destination
+    echo "Created directory bin_destination"
+fi
+
+if [ ! -d $lib_destination ]; then
+    mkdir -p $lib_destination
+    echo "Created directory $lib_destination"
+fi
+
+if [ ! -d $lib_destination ]; then
+    mkdir -p $lib_destination
+    echo "Created directory $lib_destination"
+fi
+
 # install libraries
 cp linux/lib*.so ${lib_destination}
 
