@@ -6,7 +6,7 @@ includes_destination=$3
 
 if [ ! -d $bin_destination ]; then
     mkdir -p $bin_destination
-    echo "Created directory bin_destination"
+    echo "Created directory $bin_destination"
 fi
 
 if [ ! -d $lib_destination ]; then
@@ -14,9 +14,9 @@ if [ ! -d $lib_destination ]; then
     echo "Created directory $lib_destination"
 fi
 
-if [ ! -d $lib_destination ]; then
-    mkdir -p $lib_destination
-    echo "Created directory $lib_destination"
+if [ ! -d $includes_destination ]; then
+    mkdir -p $includes_destination
+    echo "Created directory $includes_destination"
 fi
 
 # install libraries
