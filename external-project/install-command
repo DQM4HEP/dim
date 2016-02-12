@@ -1,0 +1,18 @@
+#!/bin/bash
+
+bin_destination=$1
+lib_destination=$2
+includes_destination=$3
+
+# install libraries
+cp linux/lib*.so ${lib_destination}
+
+
+# install binaries
+cp linux/benchClient linux/benchServer linux/checkDimServers linux/checkDns linux/did linux/DimBridge \
+	linux/dim_get_service linux/dim_send_command linux/dns linux/rpcClient linux/rpcServer linux/test_client \
+	linux/test_server linux/testServer linux/webDid \
+	${bin_destination}
+
+# install includes
+cp dim/*.hxx dim/*.h ${includes_destination}
