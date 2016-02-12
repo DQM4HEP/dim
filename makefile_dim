@@ -43,10 +43,10 @@ $(ODIR)/libdim.a:	$(OBJS) $(UTILOBJS) $(UNIXOBJS)
 	$(RANLIB) $(ODIR)/libdim.a
 
 $(ODIR)/libdim.so:	$(OBJS) $(UTILOBJS) $(UNIXOBJS)
-	$(CXX) $(LIBFLAGS) $(OBJS) $(UTILOBJS) $(UNIXOBJS) -o $(ODIR)/libdim.so
+	$(CXX) $(OBJS) $(UTILOBJS) $(UNIXOBJS) -o $(ODIR)/libdim.so $(LIBFLAGS)
 
 $(ODIR)/libjdim.so:	$(OBJS) $(UTILOBJS) $(UNIXOBJS) $(JOBJS)
-	$(CXX) $(LIBFLAGS) $(OBJS) $(UTILOBJS) $(UNIXOBJS) $(JOBJS) -lgcc -o $(ODIR)/libjdim.so
+	$(CXX) $(OBJS) $(UTILOBJS) $(UNIXOBJS) $(JOBJS) -lgcc -o $(ODIR)/libjdim.so $(LIBFLAGS)
 
 $(ODIR)/dns:	$(ODIR)/dns.o $(ODIR)/libdim.a
 	$(CC) $(CFLAGS) -L$(ODIR) $(ODIR)/dns.o -ldim -o $(ODIR)/dns $(EXTRALIBS)
